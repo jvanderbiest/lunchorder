@@ -32,4 +32,4 @@ Setup your own development environment? [See the wiki.](https://github.com/jvand
    [node.js]: <https://nodejs.org/en/download/>
    [firebase]: <http://www.firebase.com>
    [passport.js]: <http://passportjs.org/>
-   [azure-build-status]: https://vanderbiest.visualstudio.com/DefaultCollection/_apis/public/build/definitions/3f3d82da-2f3e-4a05-b9b2-2ef3e33c554e/2/badge "Azure Build Status"   
+   [azure-build-status]: https://vanderbiest.visualstudio.com/_apis/public/build/definitions/e3edf0fd-275f-44f0-9169-5cb245cc4bfa/3/badge "Azure Build Status"   
