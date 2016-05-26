@@ -1,5 +1,5 @@
 ![lunchorder.be](src/logos/png/lunchorder-white-md-925x250.png?raw=true "Lunch Catalog")
-![Azure Build Status][azure-build-status]
+![Azure Build Status][azure-build-status] [![Build Status](https://travis-ci.org/jvanderbiest/lunchorder.svg?branch=master)](https://travis-ci.org/jvanderbiest/lunchorder)
 
 # Lunch Order
 The purpose of this repository is to write clean and reusable / testable javascript. It should also be possible to host multiple backend services and easily switch between them.
