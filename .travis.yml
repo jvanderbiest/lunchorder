@@ -4,4 +4,9 @@ node_js:
   - "4.4.3"
 before_script:
   - npm install -g angular-cli
-script: ng build
+  - npm install -g gulp
+script: 
+  - ng build
+  - node_modules/karma/bin/karma start config/karma.conf.js --single-run --no-auto-watch
+  - gulp test-server
+  - gulp coveralls

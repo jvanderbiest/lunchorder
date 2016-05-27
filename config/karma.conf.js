@@ -1,10 +1,11 @@
 module.exports = function (config) {
-  config.set({
+  var configuration = {
     basePath: '..',
     frameworks: ['jasmine'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-phantomjs-launcher'),
       require('karma-coverage')
     ],
     customLaunchers: {
@@ -32,16 +33,16 @@ module.exports = function (config) {
       'dist/vendor/**/*.spec.js'
     ],
     preprocessors: {
-		'dist/!(vendor)/**/!(*spec).js': ['coverage']
-	},
-	
-	coverageReporter: {
+      'dist/!(vendor)/**/!(*spec).js': ['coverage']
+    },
+
+    coverageReporter: {
       dir: 'coverage/',
-	  reporters: [
-      { type: 'lcov'},
-		  { type: 'html', subdir: 'generated-js-report' },
-          { type: 'json', subdir: 'ts-json-report', file: 'coverage-final.json' }
-	  ]
+      reporters: [
+        { type: 'lcov' },
+        { type: 'html', subdir: 'generated-js-report' },
+        { type: 'json', subdir: 'ts-json-report', file: 'coverage-final.json' }
+      ]
     },
     // preprocessors: { '/src/app/**/*.js' : 'coverage' },
     reporters: ['progress', 'coverage'],
@@ -54,7 +55,13 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Chrome', 'PhantomJS'],
     singleRun: false
-  });
+  };
+
+  if (process.env.TRAVIS) {
+    configuration.browsers = ['Chrome_travis_ci'];
+  }
+
+  config.set(configuration);
 };

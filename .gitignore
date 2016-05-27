@@ -20,6 +20,7 @@
 /connect.lock
 /coverage/*
 .coveralls.yml
+lcov.info
 /libpeerconnection.log
 npm-debug.log
 testem.log
