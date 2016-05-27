@@ -5,11 +5,17 @@ var concat = require('gulp-concat')
 var runSequence = require('run-sequence');
 var server = require('gulp-express');
 var watch = require('gulp-watch');
+// used to upload to coveralls.io
 var coveralls = require('gulp-coveralls');
+// generates code coverage reports
 var istanbul = require('gulp-istanbul');
+// mocha is a testing framework
 var mocha = require('gulp-mocha');
+// merges multiple lcov.info (coverage reports)
 var merger = require('lcov-result-merger');
+// more debug info when using gulp
 var debug = require('gulp-debug');
+// saves files to disk
 var savefile = require('gulp-savefile');
 
 var tsProject = ts.createProject('express-server/tsconfig.json');
@@ -58,14 +64,7 @@ gulp.task('merge-coverage', function() {
   .pipe(debug())
     .pipe(merger())
     .pipe(savefile());
-//   .pipe(coveralls());
-    // .pipe(debug()).pipe(savefile('./coveralls/')).pipe(debug());   
 });
-
-//  gulp.task('merge-coverage', function() {
-//  mergefile = merger('/coverage/**/lcov.info');
-//   mergefile.pipe(gulp.dest('/reports/merge/merge.info'));
-// }); 
 
 gulp.task('default', ['compile-ts'], function() {
         return gulp.watch(['./**/*.ts'], ['compile-ts']);
