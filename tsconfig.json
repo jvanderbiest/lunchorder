@@ -8,6 +8,7 @@
     },
     "files": [
     "express-server/server.ts",
-    "src/main.ts"
+    "src/main.ts",
+    "typings/index.d.ts"
   ]
-} 
+}
