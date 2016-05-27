@@ -1,4 +1,5 @@
-namespace server.domain.user {
+import { IUserProfile } from './userProfile'
+ 
     export interface IUser {
         profile: IUserProfile;
     }
@@ -6,4 +7,3 @@ namespace server.domain.user {
     export class User implements IUser {
         constructor(public profile: IUserProfile) { }
     }
-}

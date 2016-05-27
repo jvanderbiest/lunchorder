@@ -3,9 +3,11 @@
         "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
-        "target": "ES5"
+        "target": "ES5",
+        "experimentalDecorators": true
     },
     "files": [
-        "express-server/**/*.ts"
-    ]
-}
+    "express-server/server.ts",
+    "src/main.ts"
+  ]
+} 

@@ -1,5 +1,6 @@
 import * as Settings from '../config/environment.dev'
-import {OAuth2Strategy} from 'passport-google-oauth';
+import { OAuth2Strategy } from 'passport-google-oauth';
+import { User } from '../domain/user/user'
 
 class Authorization {
 
@@ -7,7 +8,7 @@ class Authorization {
 
   }
 
-  User: server.domain.user.IUser;
+  User: User;
 
   public GoogleStrategy: OAuth2Strategy = new OAuth2Strategy({
     clientID: Settings.environment.authSettings.google.clientId,
@@ -23,7 +24,7 @@ class Authorization {
     //});
   });
 
-  extractProfile(profile) {
+  extractProfile(profile : any) : void {
     console.log("Extracting profile2...")
     var imageUrl = '';
     if (profile.photos && profile.photos.length) {

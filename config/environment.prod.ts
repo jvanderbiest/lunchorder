@@ -1,6 +1,4 @@
-import * as settings from './environment';
-
-export const environment : settings.IEnvironment = {
+export const environment = {
   production: true,
   authSettings: {
     google: {

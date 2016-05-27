@@ -1,4 +1,4 @@
-namespace server.domain.user {
+
     export interface IUserProfile {
         id: string;
         displayName: string;
@@ -9,4 +9,3 @@ namespace server.domain.user {
         constructor(public id: string, public displayName: string, public image: string) {
         } 
     } 
-}

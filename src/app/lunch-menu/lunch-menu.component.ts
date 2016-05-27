@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../domain/lunch/Item';
+import { Article } from '../domain/lunch/article';
 
 @Component({
   moduleId: module.id,
@@ -9,13 +9,13 @@ import { Item } from '../domain/lunch/Item';
 })
 export class LunchMenuComponent implements OnInit {
 
-  lunchItems : Item[];
+  lunchItems : Article[];
   
   constructor() {}
 
   ngOnInit() {
-    this.lunchItems = [new Item(
-      "Martino", 3.2), new Item(
+    this.lunchItems = [new Article(
+      "Martino", 3.2), new Article(
       "Kip curry", 2)];
   }
 }

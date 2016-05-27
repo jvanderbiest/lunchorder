@@ -10,5 +10,5 @@
     "outDir": "../dist-server/",
     "rootDir": ".",
     "inlineSources": true
-  }
+  }  
 }

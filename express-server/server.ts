@@ -14,7 +14,7 @@ export class BootstrapServer {
     public app: express.Application;
     private server : http.Server;
     
-    constructor() {
+    constructor() { 
         console.log("Bootstrapped");
         this.app = express();
         

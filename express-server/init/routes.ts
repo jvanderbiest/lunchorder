@@ -31,7 +31,7 @@ class Routes {
         //   which, in this example, will redirect the user to the home page.
         app.get('/auth/google/callback', 
         passport.authenticate('google', { failureRedirect: '/login' }),
-        function(req, res) {
+        function(req : express.Request, res : express.Response) {
             res.redirect('/');
         });
         
