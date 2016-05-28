@@ -32,7 +32,7 @@ gulp.task('build-and-run-coverage-in-seq', function(callback) {
 });
 
 gulp.task('test-frontend', shell.task([
-  'node node_modules/karma/bin/karma start config/karma.conf.js --single-run --no-auto-watch',
+  'node_modules/karma/bin/karma start config/karma.conf.js --single-run --no-auto-watch',
 ]))
   
 gulp.task('remap-istanbul-frontend', function () {
@@ -72,13 +72,6 @@ gulp.task('backend', function () {
   server.run(['dist-server/server.js']);
 });
 
-gulp.task('compile-ts', function () {
-  return tsProject.src() // instead of gulp.src(...) 
-    .pipe(ts(tsProject))
-    .js
-    .pipe(gulp.dest('dist-server'));
-});
-
 gulp.task('test-backend', function () {
   return gulp.src('./dist-server/**/*.js')
     .pipe(istanbul({ includeUntested: true }))
@@ -99,6 +92,13 @@ gulp.task('merge-coverage', function() {
     .pipe(gulp.dest('./coverage/'));
 });
 
+gulp.task('compile-ts', function () {
+  return tsProject.src()
+    .pipe(ts(tsProject))
+    .js
+    .pipe(gulp.dest('dist-server'));
+});
+
 gulp.task('default', ['compile-ts'], function () {
   return gulp.watch(['./**/*.ts'], ['compile-ts']);
 });
@@ -108,4 +108,3 @@ gulp.task('coveralls', ['build-and-run-coverage-in-seq']
     return gulp.src('./coverage/lcov-frontend-backend-remapped.info')
       .pipe(coveralls());
   });
-// gulp.task('default', ['build:backend', 'backend']);
