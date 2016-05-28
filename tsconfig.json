@@ -4,7 +4,17 @@
         "noImplicitAny": true,
         "removeComments": true,
         "target": "ES5",
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "sourceRoot": ""
+        
+    //     "declaration": false,
+    // "mapRoot": "",
+    // "moduleResolution": "node",
+    // "noEmitOnError": true,
+    // "outDir": "../dist-server/",
+    // "rootDir": "",
+    // "inlineSources": false
     },
     "files": [
     "express-server/server.ts",

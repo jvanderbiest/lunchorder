@@ -9,11 +9,11 @@
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noImplicitAny": false,
-    "outDir": "../dist/",
     "rootDir": "./app",
     "sourceMap": true,
+    "sourceRoot": "",
     "target": "es5",
-    "inlineSources": true
+    "inlineSources": false
   },
 
   "files": [

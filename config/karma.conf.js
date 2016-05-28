@@ -37,11 +37,12 @@ module.exports = function (config) {
     },
 
     coverageReporter: {
+      includeAllSources: true,
       dir: 'coverage/',
       reporters: [
-        { type: 'lcov' },
-        { type: 'html', subdir: 'generated-js-report' },
-        { type: 'json', subdir: 'ts-json-report', file: 'coverage-final.json' }
+        { type: 'lcov', subdir: 'frontend/lcov' },
+        { type: 'html', subdir: 'frontend/html' },
+        { type: 'json', subdir: 'frontend/json', file: 'coverage-final.json' }
       ]
     },
     // preprocessors: { '/src/app/**/*.js' : 'coverage' },

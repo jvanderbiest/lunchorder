@@ -6,9 +6,6 @@ before_script:
   - npm install -g angular-cli
   - npm install -g gulp
 script: 
-  - ng build
-  - node_modules/karma/bin/karma start config/karma.conf.js --single-run --no-auto-watch
-  - gulp test-server
-  - gulp merge-coverage
+  - gulp build-and-run-coverage-in-seq
 after_success:
   - 'cat ./lcov.info | ./node_modules/.bin/coveralls'
