@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var ts = require('gulp-typescript');
 // generate sourcemaps when using typescript
 var sourcemaps = require('gulp-sourcemaps');
-var server = require('gulp-express');
 var watch = require('gulp-watch');
 // used to upload to coveralls.io
 var coveralls = require('gulp-coveralls');
@@ -59,20 +58,8 @@ gulp.task('remap-istanbul-backend', function () {
     .pipe(debug());
 });
 
-// SERVER
-gulp.task('build:backend', function () {
-  var tsResult = gulp.src('express-server/**/*.ts')
-    .pipe(sourcemaps.init())
-    .pipe(ts(tsProject))
-  return tsResult.js
-    .pipe(sourcemaps.write('.',{includeContent:false, sourceRoot:'.'}))
-    .pipe(gulp.dest('dist-server'))
-});
 
-gulp.task('backend', function () {
-  // Start the server at the beginning of the task 
-  server.run(['dist-server/server.js']);
-});
+
 
 gulp.task('test-backend', function () {
   return gulp.src('./dist-server/**/*.js')

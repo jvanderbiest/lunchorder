@@ -1,10 +1,13 @@
 export const environment = {
-    production: true,
-    authSettings: {
-      google: {
+  production: false,
+  authSettings: {
+    google: {
       clientId: "",
       clientSecret: "",
       callbackUrl: ""
-      }
     }
-  };
+  },
+  frontEnd: {
+    url: ""
+  }
+};

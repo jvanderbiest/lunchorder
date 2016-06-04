@@ -6,7 +6,7 @@
         "target": "ES5",
         "experimentalDecorators": true,
         "sourceMap": true,
-        "sourceRoot": ""
+        "sourceRoot": "" 
         
     //     "declaration": false,
     // "mapRoot": "",

@@ -12,6 +12,7 @@
     "firebase": "registry:dt/firebase#2.4.1+20160412125105",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
     "node": "registry:dt/node#4.0.0+20160505172921",
+    "node-cache": "registry:dt/node-cache#3.0.0+20160317120654",
     "passport": "registry:dt/passport#0.2.0+20160317120654",
     "passport-google-oauth": "registry:dt/passport-google-oauth#1.0.3+20160316155526",
     "serve-static": "registry:dt/serve-static#0.0.0+20160501131543"
