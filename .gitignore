@@ -6,6 +6,7 @@
 # compiled output
 /dist
 /dist-server
+/dist-server/express-server
 /tmp
 
 # dependencies
@@ -25,6 +26,7 @@ lcov.info
 npm-debug.log
 testem.log
 /typings
+/**/*.js.map
 
 # e2e
 /e2e/*.js

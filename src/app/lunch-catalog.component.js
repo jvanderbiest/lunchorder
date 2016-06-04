@@ -23,3 +23,4 @@ var LunchCatalogAppComponent = (function () {
     return LunchCatalogAppComponent;
 }());
 exports.LunchCatalogAppComponent = LunchCatalogAppComponent;
+//# sourceMappingURL=lunch-catalog.component.js.map

@@ -19,3 +19,4 @@ var BootstrapServer = (function () {
 }());
 exports.BootstrapServer = BootstrapServer;
 new BootstrapServer();
+//# sourceMappingURL=server.js.map

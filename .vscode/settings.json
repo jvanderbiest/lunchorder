@@ -2,7 +2,8 @@
 {
     "files.exclude": {
         "dist": true,
-        "dist-server": true,
+        "dist-server/express-server": true,
         "**/*.js": {"when": "$(basename).ts"}
+		"**/*.js.map": true
     }
 }

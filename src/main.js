@@ -6,3 +6,4 @@ if (_1.environment.production) {
     core_1.enableProdMode();
 }
 platform_browser_dynamic_1.bootstrap(_1.LunchCatalogAppComponent);
+//# sourceMappingURL=main.js.map

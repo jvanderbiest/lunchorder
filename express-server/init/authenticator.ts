@@ -6,6 +6,7 @@ import { CacheService } from '../services/cacheService'
 
 interface IAuthenticator {
   GoogleStrategy: OAuth2Strategy;
+  BearerStrategy: BeareStrategy.Strategy;
 }
 
 class Authenticator implements IAuthenticator {

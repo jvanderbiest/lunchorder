@@ -6,11 +6,12 @@ import { injectable, inject } from 'inversify';
 export class FooService {
     
     private data : any = {
-      1: 'Foo',
-      2: 'Bar'  
+      1: 'Foo1',
+      2: 'Bar1'  
     };
     
     public get(id: number): string {
+        console.log("getting id123: " +id);
         return this.data[id];
     }
 }

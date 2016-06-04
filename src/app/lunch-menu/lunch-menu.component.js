@@ -24,3 +24,4 @@ var LunchMenuComponent = (function () {
     return LunchMenuComponent;
 }());
 exports.LunchMenuComponent = LunchMenuComponent;
+//# sourceMappingURL=lunch-menu.component.js.map

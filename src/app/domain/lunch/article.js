@@ -7,3 +7,4 @@ var Article = (function () {
     return Article;
 }());
 exports.Article = Article;
+//# sourceMappingURL=article.js.map

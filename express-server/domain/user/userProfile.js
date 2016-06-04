@@ -8,3 +8,4 @@ var UserProfile = (function () {
     return UserProfile;
 }());
 exports.UserProfile = UserProfile;
+//# sourceMappingURL=userProfile.js.map
