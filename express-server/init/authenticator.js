@@ -1,5 +1,4 @@
 "use strict";
-var Settings = require('../config/environment.dev');
 var passport_google_oauth_1 = require('passport-google-oauth');
 var user_1 = require('../domain/user/user');
 var BeareStrategy = require('passport-http-bearer');
@@ -25,9 +24,9 @@ var Authenticator = (function () {
             }
         });
         this.GoogleStrategy = new passport_google_oauth_1.OAuth2Strategy({
-            clientID: Settings.environment.authSettings.google.clientId,
-            clientSecret: Settings.environment.authSettings.google.clientSecret,
-            callbackURL: Settings.environment.authSettings.google.callbackUrl
+            clientID: "Settings.environment.authSettings.google.clientId",
+            clientSecret: "Settings.environment.authSettings.google.clientSecret",
+            callbackURL: "Settings.environment.authSettings.google.callbackUrl"
         }, function (accessToken, refreshToken, profile, done) {
             console.log("Google has authentiated...");
             var profileObj = _this.extractProfile(profile);

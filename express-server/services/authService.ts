@@ -1,25 +1,26 @@
 import { Controller, Get } from 'inversify-express-utils';
 import { injectable, inject } from 'inversify';
 
-import * as Settings from '../config/environment.dev'
 import { OAuth2Strategy } from 'passport-google-oauth';
 import { User } from '../domain/user/user'
 import * as BearerStrategy from 'passport-http-bearer';
 import { CacheService } from '../services/cacheService'
+import { ISettings } from '../config/settings';
 
-interface IAuthService {
+export interface IAuthService {
     BearerStrategy: BearerStrategy.Strategy;
     GoogleStrategy: OAuth2Strategy;
 }
 
+@injectable()
 export class AuthService implements IAuthService {
-    constructor() {
+    constructor(@inject('ISettings') private settings: ISettings) {
         this.cacheService = new CacheService();
         this.BearerStrategy = new BearerStrategy.Strategy(this.initBearerStrategy);
         this.GoogleStrategy = new OAuth2Strategy({
-            clientID: Settings.environment.authSettings.google.clientId,
-            clientSecret: Settings.environment.authSettings.google.clientSecret,
-            callbackURL: Settings.environment.authSettings.google.callbackUrl
+            clientID: settings.auth.google.clientId,
+            clientSecret: settings.auth.google.clientSecret,
+            callbackURL: settings.auth.google.callbackUrl
         }, this.initOAuth2Strategy);
     }
 

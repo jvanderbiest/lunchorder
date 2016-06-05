@@ -1,4 +1,3 @@
-
 import 'reflect-metadata';
 import * as express from 'express';
 import { Kernel } from 'inversify';
@@ -8,24 +7,27 @@ import * as http from 'http';
 import * as path from 'path';
 import * as passport from 'passport';
 import * as Settings from '../config/environment.dev'
-
-import { FooController } from './controllers/fooController';
-import { FooService } from './services/fooService';
-import { AuthController } from './controllers/authController';
-import { AuthService } from './services/authService';
 import * as Morgan from 'morgan'
+
+import { AuthController } from './controllers/authController';
+import { UserController } from './controllers/userController';
+import { AuthService, IAuthService } from './services/authService';
+import { ISettings } from './config/settings';
+import { DevelopmentSettings } from './config/settings.development';
 
 // set up kernel
 let kernel = new Kernel();
-kernel.bind<FooService>('FooService').to(FooService);
-kernel.bind<FooController>('FooController').to(FooController);
 kernel.bind<AuthController>('AuthController').to(AuthController);
+kernel.bind<UserController>('UserController').to(UserController);
+kernel.bind<ISettings>("ISettings").toConstantValue(new DevelopmentSettings());
+kernel.bind<IAuthService>("IAuthService").to(AuthService);
 
 // create server
 let server = new InversifyExpressServer(kernel);
 
+// configure server
 server.setConfig((app) => {
-    var authService = new AuthService();
+    var authService = kernel.get<IAuthService>("IAuthService");
 
     var logger = Morgan('combined')
     app.use(logger);

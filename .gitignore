@@ -1,7 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # environment
-#/express-server/config/environment.dev.ts
+/express-server/config/settings.development.ts
 
 # compiled output
 /dist

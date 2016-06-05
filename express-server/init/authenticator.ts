@@ -1,4 +1,4 @@
-import * as Settings from '../config/environment.dev'
+// import * as Settings from '../config/environment.dev'
 import { OAuth2Strategy } from 'passport-google-oauth';
 import { User } from '../domain/user/user'
 import * as BeareStrategy from 'passport-http-bearer';
@@ -40,36 +40,12 @@ class Authenticator implements IAuthenticator {
         // this.cacheService.get(token, (err: any, value: any) => {
         //   console.log("error: " + err);
         //   console.log("value " + value);
-
-
-        // if (!err) {
-        //    if (value == undefined) {
-        //     // key not found -- unauthorized
-        //     return done("Unauthorized");
-        //   } else {
-        //      console.log("token from cache:" + value);
-        //         done(null, value);
-        //     console.log(value);
-        //     //{ my: "Special", variable: 42 } 
-        //     // ... do something ... 
-        //   }
-        // }
-        // else {
-        //   return done(err);
-        // }
-        // User.findOne({ token: token }, function (err, user) {
-        // if (err) { return done(err); }
-        // if (!user) { return done(null, false); }
-        // return done(null, user, { scope: 'all' });
-        // });
-
-        // });
       });
 
     this.GoogleStrategy = new OAuth2Strategy({
-      clientID: Settings.environment.authSettings.google.clientId,
-      clientSecret: Settings.environment.authSettings.google.clientSecret,
-      callbackURL: Settings.environment.authSettings.google.callbackUrl
+      clientID: "Settings.environment.authSettings.google.clientId",
+      clientSecret: "Settings.environment.authSettings.google.clientSecret",
+      callbackURL: "Settings.environment.authSettings.google.callbackUrl"
     }, (accessToken, refreshToken, profile, done) => {
 
       console.log("Google has authentiated...");
@@ -88,7 +64,6 @@ class Authenticator implements IAuthenticator {
       //});
     });
   }
-
 
   extractProfile(profile: any): any {
 

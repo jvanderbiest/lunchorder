@@ -19,11 +19,6 @@ gulp.task('build:backend', function () {
 
 gulp.task('backend', ['build:backend'], function () {
   // Start the server at the beginning of the task 
-  server.run(['dist-server/express-server/server.js']);
-});
-
-gulp.task('backend-di', ['build:backend'], function () {
-  // Start the server at the beginning of the task 
   server.run(['dist-server/express-server/kernel.js']);
 });
 
